@@ -1,0 +1,13 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <mat-icon class="example-icon" aria-hidden="false" aria-label="Example user verified icon">autorenew</mat-icon>
+    <span> IMAGE TO TEXT</span>
+    <div>
+      <a  mat-button *ngIf="!user" [routerLink]="'/login'"> Login </a>
+      <a mat-button *ngIf="!user" [routerLink]="'/register'"> Register </a>
+      <a mat-button *ngIf="user" (click)="logOut()"> Logout </a>
+
+
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

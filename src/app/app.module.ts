@@ -9,6 +9,7 @@ import { NavbarComponent } from './coponents/navbar/navbar.component';
 import { LoginComponent } from './coponents/login/login.component';
 import { RegisterComponent } from './coponents/register/register.component';
 import { HomeComponent } from './coponents/home/home.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HomeComponent } from './coponents/home/home.component';
     MatInputModule,
     MatToolbarModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

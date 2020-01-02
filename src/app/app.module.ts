@@ -10,6 +10,10 @@ import { LoginComponent } from './coponents/login/login.component';
 import { RegisterComponent } from './coponents/register/register.component';
 import { HomeComponent } from './coponents/home/home.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import {AngularFireModule} from '@angular/fire';
+import {environment} from '../environments/environment';
+import {AngularFireAuthModule} from '@angular/fire/auth';
+import {FlashMessagesModule} from 'angular2-flash-messages';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,10 @@ import {ReactiveFormsModule} from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig, 'ocr-app'),
+    AngularFireAuthModule,
 
+    FlashMessagesModule.forRoot(),
     MatInputModule,
     MatToolbarModule,
     MatIconModule,

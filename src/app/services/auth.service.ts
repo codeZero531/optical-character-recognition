@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import {AngularFireAuth} from '@angular/fire/auth';
+import {Observable} from 'rxjs';
+import { Router} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -7,8 +9,13 @@ import {AngularFireAuth} from '@angular/fire/auth';
 export class AuthService {
 
   constructor(
-    private afAuth: AngularFireAuth
+    private afAuth: AngularFireAuth,
+    private router: Router
   ) { }
+
+  getUserState(): Observable<any> {
+    return this.afAuth.authState;
+  }
 
   login(email: string, password: string) {
     return new Promise((resolve, reject) => {
@@ -18,5 +25,11 @@ export class AuthService {
 
       }, err => reject(err));
     });
+  }
+
+  logOut() {
+    this.afAuth.auth.signOut();
+    this.router.navigate(['/login']);
+
   }
 }

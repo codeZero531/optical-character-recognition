@@ -9,7 +9,7 @@
         <form class="example-form" [formGroup]="registerForm" (submit)="onSubmit()">
           <mat-form-field class="example-full-width">
             <input formControlName="name" matInput placeholder="Name" value="" required>
-            <mat-error *ngIf="formControls.name.invalid">Name required</mat-error>
+            <mat-error *ngIf="formControls.name.invalid">You must enter a value</mat-error>
           </mat-form-field>
 
           <mat-form-field class="example-full-width">

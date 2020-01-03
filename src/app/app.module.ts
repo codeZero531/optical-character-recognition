@@ -15,6 +15,7 @@ import {environment} from '../environments/environment';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import {FlashMessagesModule} from 'angular2-flash-messages';
 import {HttpClientModule} from '@angular/common/http';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import {HttpClientModule} from '@angular/common/http';
     AngularFireModule.initializeApp(environment.firebaseConfig, 'ocr-app'),
     AngularFireAuthModule,
     HttpClientModule,
+    AngularFirestoreModule,
 
     FlashMessagesModule.forRoot(),
     MatInputModule,

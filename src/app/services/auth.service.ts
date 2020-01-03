@@ -2,15 +2,19 @@ import { Injectable } from '@angular/core';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {Observable} from 'rxjs';
 import { Router} from '@angular/router';
+import {User} from '../models/User';
+import {AngularFirestore} from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  newUser: User;
 
   constructor(
     private afAuth: AngularFireAuth,
-    private router: Router
+    private router: Router,
+    private db: AngularFirestore
   ) { }
 
   getUserState(): Observable<any> {
@@ -24,6 +28,29 @@ export class AuthService {
           resolve(userData);
 
       }, err => reject(err));
+    });
+  }
+
+  register(user) {
+      return new Promise((resolve, reject) => {
+        this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password)
+          .then(
+            userData => {
+              resolve(userData);
+              this.newUser = user;
+              userData.user.updateProfile({displayName: user.name});
+              this.insertUserData(userData);
+            },
+            err => reject(err)
+          );
+      });
+  }
+
+  insertUserData(userCredential: firebase.auth.UserCredential) {
+    return this.db.doc(`Users/${userCredential.user.uid}`).set({
+      email: this.newUser.email,
+      name: this.newUser.name,
+      password: this.newUser.password
     });
   }
 

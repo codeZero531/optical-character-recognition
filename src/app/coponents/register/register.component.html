@@ -1,1 +1,32 @@
-<p>register works!</p>
+<div class="row pt-20">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+    <div class="card" style="margin-top: 110px;">
+      <div class="card-header">
+        Login
+      </div>
+      <div class="card-body">
+        <form class="example-form" [formGroup]="registerForm" (submit)="onSubmit()">
+          <mat-form-field class="example-full-width">
+            <input formControlName="name" matInput placeholder="Name" value="" required>
+            <mat-error *ngIf="formControls.name.invalid">Name required</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input formControlName="email" matInput placeholder="Email" value="" required>
+            <mat-error *ngIf="formControls.email.invalid">{{getErrorMessage()}}</mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input formControlName="password" matInput placeholder="Password" value="" required>
+            <!--            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>-->
+          </mat-form-field>
+
+          <button mat-raised-button color="primary" >Login</button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3"></div>
+</div>

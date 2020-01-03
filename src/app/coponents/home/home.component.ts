@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {retry} from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',
@@ -34,14 +35,19 @@ export class HomeComponent implements OnInit {
   }
 
   onSubmit() {
+    this.text = '';
 
     const formData = new FormData();
     formData.append('file', this.images);
     this.load = true;
 
     this.http.post<any>('http://localhost:5000/file', formData)
+      .pipe(
+        retry()
+      )
       .subscribe(
         (res) => {
+          console.log(typeof res);
           console.log(res.text);
           this.text = res.text;
         },

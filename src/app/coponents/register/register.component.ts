@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../../services/auth.service';
 import {User} from '../../models/User';
+import {Router} from '@angular/router';
+import {FlashMessagesService} from 'angular2-flash-messages';
 
 @Component({
   selector: 'app-register',
@@ -14,7 +16,9 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router,
+    private flashMessage: FlashMessagesService
 
   ) { }
 
@@ -45,10 +49,17 @@ export class RegisterComponent implements OnInit {
 
     this.authService.register(this.newUser)
       .then( res => {
-        console.log('registed!');
+        // console.log(res);
+        this.flashMessage.show('Register successfully!', {
+          cssClass: 'alert-success', timeout: 5000
+        });
+        this.router.navigate(['/login']);
       })
       .catch(err => {
         console.log(err.message);
+        this.flashMessage.show(err.message, {
+          cssClass: 'alert-danger', timeout: 5000
+        });
       });
 
   }

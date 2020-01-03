@@ -43,7 +43,7 @@ export class HomeComponent implements OnInit {
 
     this.http.post<any>('http://localhost:5000/file', formData)
       .pipe(
-        retry()
+        // retry()
       )
       .subscribe(
         (res) => {

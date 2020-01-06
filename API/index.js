@@ -13,7 +13,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 
 
-const PORT = process.env.PORT ||  5000
+const PORT = process.env.PORT ||  3000
+
 
 const storage = multer.diskStorage({
     destination: (req, file, callBack) => {
@@ -25,13 +26,6 @@ const storage = multer.diskStorage({
 });
 
 var upload = multer({storage: storage});
-// var upload = multer({dest: 'uploads/'});
-
-function test() {
-
-
-
-}
 
 app.post('/file', upload.single('file'), (req, res, next) => {
     const file = req.file;
@@ -44,7 +38,8 @@ app.post('/file', upload.single('file'), (req, res, next) => {
         return next(error);
     }
 
-    // ocr
+    // ocr function
+
     const worker = createWorker.createWorker({
         logger: m => console.log((m.progress)*100 + "%"), // Add logger here
     });
@@ -75,6 +70,7 @@ app.post('/multipleFiles', upload.array('files'), (req, res, next) => {
     res.send({status: 'ok'});
 });
 
+//api test
 app.get('/test', (req, res) => {
    res.status(200).json({
        message: 'test work!'

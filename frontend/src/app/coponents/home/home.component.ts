@@ -41,7 +41,7 @@ export class HomeComponent implements OnInit {
     formData.append('file', this.images);
     this.load = true;
 
-    this.http.post<any>('http://localhost:5000/file', formData)
+    this.http.post<any>('http://localhost:3000/file', formData)
       .pipe(
         // retry()
       )

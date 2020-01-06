@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
   imgSrc: any;
 
   languages = languages;
+  selectedOption: string;
 
   constructor(
     private http: HttpClient,
@@ -43,7 +44,7 @@ export class HomeComponent implements OnInit {
     this.text = '';
     this.load = true;
 
-    this.fileService.fileUpload(this.images)
+    this.fileService.fileUpload(this.images, this.selectedImage)
       .pipe(
         retry(5),
 

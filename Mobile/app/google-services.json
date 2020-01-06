@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1035593710330",
+    "firebase_url": "https://photo-upload-firebase.firebaseio.com",
+    "project_id": "photo-upload-firebase",
+    "storage_bucket": "photo-upload-firebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1035593710330:android:c2ba3699fe51030779e743",
+        "android_client_info": {
+          "package_name": "ruwanbandara.photouploadfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1035593710330-m8ibcbvg3sj464huo0leh8rt2h6kj80g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ruwanbandara.photouploadfirebase",
+            "certificate_hash": "f5f8267344797b73a0e0c77346e0b4c89063621a"
+          }
+        },
+        {
+          "client_id": "1035593710330-9i34gi6lin94pj7q69s5uu9gppl6djt8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQXGgK013oec0Xdm4mBARpu7ujJfCZGWc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1035593710330-9i34gi6lin94pj7q69s5uu9gppl6djt8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

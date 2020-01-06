@@ -8,7 +8,7 @@ import {
   MatButtonModule,
   MatIconModule,
   MatInputModule,
-  MatOptionModule,
+  MatOptionModule, MatProgressBarModule,
   MatProgressSpinnerModule, MatSelectModule,
   MatToolbarModule
 } from '@angular/material';
@@ -51,6 +51,7 @@ import {AngularFirestoreModule} from '@angular/fire/firestore';
     MatOptionModule,
     MatSelectModule,
     FormsModule,
+    MatProgressBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

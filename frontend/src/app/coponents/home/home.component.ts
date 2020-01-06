@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {map, retry} from 'rxjs/operators';
 import {FileService} from '../../services/file.service';
 import {languages} from '../../models/Languages';
+import {FlashMessagesService} from 'angular2-flash-messages';
 
 @Component({
   selector: 'app-home',
@@ -23,16 +24,18 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
-    private fileService: FileService
+    private fileService: FileService,
+    private flashMessage: FlashMessagesService
   ) { }
 
   ngOnInit() {
   }
 
+  // get selected image
   featuredPhotoSelected(event: any) {
     const file  = event.target.files[0];
     this.images = file;
-    // this.fileService.test(file);
+
   }
 
   selectMultipleImage(event: any) {
@@ -43,6 +46,10 @@ export class HomeComponent implements OnInit {
   onSubmit() {
     this.text = '';
     this.load = true;
+
+    if (!this.selectedOption){
+      this.selectedOption = 'eng';
+    }
 
     this.fileService.fileUpload(this.images, this.selectedOption)
       .pipe(
@@ -66,6 +73,19 @@ export class HomeComponent implements OnInit {
 
   }
 
+  // selected photo preview
+  showPreview(event: any) {
+    if (event.target.files && event.target.files[0]) {
+      const  reader = new FileReader();
+      reader.onload = (e: any) => this.imgSrc = e.target.result;
+      reader.readAsDataURL(event.target.files[0]);
+      this.selectedImage = event.target.files[0];
+      console.log(reader);
+    } else {
+      this.selectedImage = null;
+    }
+  }
+
   onMultipleSubmit() {
     const formData = new FormData();
     for (const img of this.multipleImages) {
@@ -79,18 +99,23 @@ export class HomeComponent implements OnInit {
 
   }
 
-
-  showPreview(event: any) {
-    if (event.target.files && event.target.files[0]) {
-      const  reader = new FileReader();
-      reader.onload = (e: any) => this.imgSrc = e.target.result;
-      reader.readAsDataURL(event.target.files[0]);
-      this.selectedImage = event.target.files[0];
-      console.log(reader);
-    } else {
-      this.selectedImage = null;
-      this.imgSrc = '/assets/img/image.jpeg';
-    }
+  // To copy Text
+  copyText(val: string){
+    const selBox = document.createElement('textarea');
+    selBox.style.position = 'fixed';
+    selBox.style.left = '0';
+    selBox.style.top = '0';
+    selBox.style.opacity = '0';
+    selBox.value = val;
+    document.body.appendChild(selBox);
+    selBox.focus();
+    selBox.select();
+    document.execCommand('copy');
+    document.body.removeChild(selBox);
+    this.flashMessage.show('text copied!', {
+      cssClass: 'alert-success', timeout: 2000
+    });
   }
+
 
 }

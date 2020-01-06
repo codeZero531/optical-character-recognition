@@ -1,14 +1,16 @@
 <!--<h1>Upload Image</h1>-->
 
 <div class="row">
+
   <div class="col-md-6">
     <div class="example-full-width">
       <input  type="file" (change)="featuredPhotoSelected($event);showPreview($event)">
     </div>
+    <br>
 
     <mat-form-field class="example-full-width">
       <mat-label>Select Language</mat-label>
-      <mat-select [(ngModel)]="selectedOption">
+      <mat-select [(ngModel)]="selectedOption" required>
         <mat-option  *ngFor="let lan of languages" [value]="lan.value">
           {{lan.name}}
         </mat-option>
@@ -27,9 +29,14 @@
       <div class="card-body ">
 
         <div class="text-center">
-          <mat-spinner *ngIf="load"></mat-spinner>
+<!--          <mat-spinner *ngIf="load"></mat-spinner>-->
+          <mat-progress-bar mode="indeterminate" *ngIf="load"></mat-progress-bar>
         </div>
         {{text}}
+      </div>
+      <div class="card-footer">
+
+        <button  (click)="copyText(text)" *ngIf="text" class="btn-block" mat-raised-button color="primary">copy text</button>
       </div>
     </div>
 

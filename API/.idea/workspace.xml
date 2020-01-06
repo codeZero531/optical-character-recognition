@@ -2,24 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a2011d16-2652-4d8e-8750-bb197514bddf" name="Default Changelist" comment="">
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Mobile/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../Mobile/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Mobile/app/src/main/java/ruwanbandara/photouploadfirebase/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Mobile/app/src/main/java/ruwanbandara/photouploadfirebase/MainActivity.java" afterDir="false" />
-=======
-=======
->>>>>>> 4439592de9d88c16b91e9e7c72147c1f258049b6
+
       <change beforePath="$PROJECT_DIR$/../frontend/src/app/coponents/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/coponents/home/home.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/app/coponents/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/coponents/home/home.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/app/services/file.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/services/file.service.ts" afterDir="false" />
->>>>>>> 4439592de9d88c16b91e9e7c72147c1f258049b6
-=======
+
       <change beforePath="$PROJECT_DIR$/../frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/app/coponents/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/coponents/home/home.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/app/coponents/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/coponents/home/home.component.ts" afterDir="false" />
->>>>>>> 2fc4bf5c0c346ca78850eb01ea7f757b588debd8
+
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/coponents/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/coponents/home/home.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/coponents/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/coponents/home/home.component.ts" afterDir="false" />
+
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -147,20 +146,19 @@
       <updated>1578068150452</updated>
       <workItem from="1578068151972" duration="1573000" />
       <workItem from="1578070583121" duration="58000" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+
       <workItem from="1578326252772" duration="2707000" />
       <workItem from="1578338335791" duration="977000" />
-=======
+
       <workItem from="1578326252772" duration="5078000" />
->>>>>>> 4439592de9d88c16b91e9e7c72147c1f258049b6
-=======
+
       <workItem from="1578326252772" duration="5078000" />
->>>>>>> 4439592de9d88c16b91e9e7c72147c1f258049b6
-=======
+
       <workItem from="1578326252772" duration="6407000" />
 >>>>>>> 2fc4bf5c0c346ca78850eb01ea7f757b588debd8
+=======
+      <workItem from="1578326252772" duration="6407000" />
+
     </task>
     <servers />
   </component>
@@ -213,9 +211,9 @@
     <state width="936" height="297" key="GridCell.Tab.0.right" timestamp="1578340936954">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-<<<<<<< HEAD
+
     <state width="936" height="297" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1578334637594" />
-<<<<<<< HEAD
+
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.js">
@@ -225,10 +223,10 @@
         </state>
       </provider>
     </entry>
-=======
->>>>>>> 4439592de9d88c16b91e9e7c72147c1f258049b6
-=======
+
     <state width="936" height="297" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1578340936954" />
->>>>>>> 2fc4bf5c0c346ca78850eb01ea7f757b588debd8
+
+    <state width="936" height="297" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1578340936954" />
+
   </component>
 </project>

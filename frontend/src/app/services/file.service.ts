@@ -14,6 +14,7 @@ export class FileService {
   fileUpload(file: File): Observable<any> {
     const formData = new FormData();
     formData.append('file', file);
+    formData.append('language', 'EN');
     // this.load = true;
     return this.http.post<any>('http://localhost:3000/file', formData );
   }

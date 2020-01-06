@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {map, retry} from 'rxjs/operators';
 import {FileService} from '../../services/file.service';
+import {languages} from '../../models/Languages';
 
 @Component({
   selector: 'app-home',
@@ -16,6 +17,8 @@ export class HomeComponent implements OnInit {
   load: boolean;
   selectedImage: any;
   imgSrc: any;
+
+  languages = languages;
 
   constructor(
     private http: HttpClient,

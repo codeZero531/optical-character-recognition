@@ -79,6 +79,13 @@ app.get('/test', (req, res) => {
    });
 });
 
+app.post('/ruwan', (req, res) => {
+   console.log(req.body);
+   res.json({
+      message: 'done'
+   });
+});
+
 app.use(morgan());
 
 app.listen(PORT, () => console.log(`server running on ${PORT} ...`));

@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a2011d16-2652-4d8e-8750-bb197514bddf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../frontend/src/app/coponents/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/coponents/home/home.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/coponents/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/coponents/login/login.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/services/file.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/services/file.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

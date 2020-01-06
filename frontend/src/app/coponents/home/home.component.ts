@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {retry} from 'rxjs/operators';
+import {map, retry} from 'rxjs/operators';
 import {FileService} from '../../services/file.service';
 
 @Component({
@@ -42,10 +42,12 @@ export class HomeComponent implements OnInit {
 
     this.fileService.fileUpload(this.images)
       .pipe(
-        retry(5)
+        retry(5),
+
       )
       .subscribe(
         (res) => {
+
           console.log(typeof res);
           console.log(res.text);
           this.text = res.text;

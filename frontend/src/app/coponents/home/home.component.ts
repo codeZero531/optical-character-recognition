@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {retry} from 'rxjs/operators';
+import {FileService} from '../../services/file.service';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +18,8 @@ export class HomeComponent implements OnInit {
   imgSrc: any;
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private fileService: FileService
   ) { }
 
   ngOnInit() {
@@ -36,14 +38,11 @@ export class HomeComponent implements OnInit {
 
   onSubmit() {
     this.text = '';
-
-    const formData = new FormData();
-    formData.append('file', this.images);
     this.load = true;
 
-    this.http.post<any>('http://localhost:3000/file', formData)
+    this.fileService.fileUpload(this.images)
       .pipe(
-        // retry()
+        retry(5)
       )
       .subscribe(
         (res) => {

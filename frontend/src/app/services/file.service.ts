@@ -11,9 +11,10 @@ export class FileService {
     private http: HttpClient
   ) { }
 
-  fileUpload(file: File): Observable<any> {
+  fileUpload(file: File, selectedOption: string): Observable<any> {
     const formData = new FormData();
     formData.append('file', file);
+    formData.append('language', selectedOption);
     // this.load = true;
     return this.http.post<any>('http://localhost:3000/file', formData );
   }

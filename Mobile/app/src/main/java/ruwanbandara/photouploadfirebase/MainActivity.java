@@ -18,6 +18,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -28,7 +29,6 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
-
 
 public class MainActivity extends AppCompatActivity {
 
@@ -47,9 +47,15 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
 
+    // Post requst dat
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -64,10 +70,13 @@ public class MainActivity extends AppCompatActivity {
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("uploads");
 
 
+
+
         mButtonChooserImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openFileChooser();
+
 
             }
         });
@@ -76,6 +85,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 uploadFile();
+
+
+
 
             }
         });
@@ -203,6 +215,17 @@ public class MainActivity extends AppCompatActivity {
 
                         Upload upload = new Upload(mEditTextFileName.getText().toString().trim(),
                                 downloadUri.toString());
+
+
+//                        imageLink = downloadUri.toString();
+//
+//
+//                        String data = "{"+ "\"name\"" + "\"" + imageLink + "\","+ "}";
+//
+//
+
+
+
 
                         mDatabaseRef.push().setValue(upload);
                     } else {

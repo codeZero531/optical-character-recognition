@@ -29,8 +29,10 @@ var upload = multer({storage: storage});
 
 app.post('/file', upload.single('file'), (req, res, next) => {
     const file = req.file;
-    console.log(file.filename);
+    const language = req.body.language;
 
+    console.log(req.body.language);
+    // var text = test();
 
     if (!file) {
         const  error = new Error('Please upload the file');
@@ -45,8 +47,8 @@ app.post('/file', upload.single('file'), (req, res, next) => {
     });
     (async () => {
         await worker.load();
-        await worker.loadLanguage('eng');
-        await worker.initialize('eng');
+        await worker.loadLanguage(language);
+        await worker.initialize(language);
         const { data: { text } } = await worker.recognize(`./uploads/${file.originalname}`);
         console.log(text);
         await worker.terminate();
@@ -74,6 +76,13 @@ app.post('/multipleFiles', upload.array('files'), (req, res, next) => {
 app.get('/test', (req, res) => {
    res.status(200).json({
        message: 'test work!'
+   });
+});
+
+app.post('/ruwan', (req, res) => {
+   console.log(req.body);
+   res.json({
+      message: 'done'
    });
 });
 

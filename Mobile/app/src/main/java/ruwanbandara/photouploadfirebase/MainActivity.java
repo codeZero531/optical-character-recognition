@@ -25,7 +25,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
@@ -216,14 +215,14 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
 
-            }).
-                    .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
-                @Override
-                public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
-                    double progress = (100.0 * taskSnapshot.getBytesTransferred() / taskSnapshot.getTotalByteCount());
-                    mProgressBar.setProgress((int) progress);
-                }
             });
+//                    .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+//                @Override
+//                public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
+//                    double progress = (100.0 * taskSnapshot.getBytesTransferred() / taskSnapshot.getTotalByteCount());
+//                    mProgressBar.setProgress((int) progress);
+//                }
+//            });
         } else {
             Toast.makeText(this, "No File Selected", Toast.LENGTH_SHORT).show();
 

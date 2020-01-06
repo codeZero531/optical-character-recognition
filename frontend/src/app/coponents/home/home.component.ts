@@ -44,7 +44,7 @@ export class HomeComponent implements OnInit {
     this.text = '';
     this.load = true;
 
-    this.fileService.fileUpload(this.images, this.selectedImage)
+    this.fileService.fileUpload(this.images, this.selectedOption)
       .pipe(
         retry(5),
 

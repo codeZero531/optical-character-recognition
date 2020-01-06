@@ -29,6 +29,8 @@ var upload = multer({storage: storage});
 
 app.post('/file', upload.single('file'), (req, res, next) => {
     const file = req.file;
+    const language = req.body.language;
+
     console.log(req.body.language);
     // var text = test();
 
@@ -45,8 +47,8 @@ app.post('/file', upload.single('file'), (req, res, next) => {
     });
     (async () => {
         await worker.load();
-        await worker.loadLanguage('eng');
-        await worker.initialize('eng');
+        await worker.loadLanguage(language);
+        await worker.initialize(language);
         const { data: { text } } = await worker.recognize(`./uploads/${file.originalname}`);
         console.log(text);
         await worker.terminate();

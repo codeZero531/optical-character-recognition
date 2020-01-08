@@ -18,7 +18,12 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -29,6 +34,9 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -54,6 +62,12 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
+
+
+
+
 
 
         super.onCreate(savedInstanceState);
@@ -231,6 +245,15 @@ public class MainActivity extends AppCompatActivity {
                     } else {
                         Toast.makeText(MainActivity.this, "upload failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
+
+
+
+
+
+
+
+
+
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
@@ -250,6 +273,40 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "No File Selected", Toast.LENGTH_SHORT).show();
 
         }
+
+
+        RequestQueue queue = Volley.newRequestQueue(this);  // this = context
+        String url = "http://localhost:3000/ruwan";
+        StringRequest postRequest = new StringRequest(Request.Method.POST, url,
+                new Response.Listener<String>()
+                {
+                    @Override
+                    public void onResponse(String response) {
+                        // response
+                        Log.d("Response", response);
+                    }
+                },
+                new Response.ErrorListener()
+                {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // error
+//                        String response = null;
+//                        Log.d("Error.Response", response);
+                    }
+                }
+        ) {
+            @Override
+            protected Map<String, String> getParams()
+            {
+                Map<String, String>  params = new HashMap<String, String>();
+                params.put("name", "Alif");
+                params.put("domain", "http://itsalif.info");
+
+                return params;
+            }
+        };
+        queue.add(postRequest);
 
 
     }

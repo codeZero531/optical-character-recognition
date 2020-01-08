@@ -25,11 +25,15 @@
 
     <ImageView
         android:id="@+id/image_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="362dp"
+        android:layout_height="313dp"
         android:layout_above="@+id/progress_bar"
         android:layout_below="@+id/edit_text_file_name"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="191dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
     <ProgressBar
         android:id="@+id/progress_bar"

@@ -92,15 +92,29 @@ app.post('/ruwan', (req, res) => {
 });
 
 app.post('/image' , (req, res) => {
-    console.log('done');
-
-    fs.writeFile('uploads/image.png', req.body.image, {encoding: 'base64'}, function(err) {
+    fs.writeFile(`uploads/${req.body.name}`, req.body.image, {encoding: 'base64'}, function(err) {
         console.log('File created');
     });
 
-    res.status(200).json({
-        message : 'hello'
+    // ocr function
+
+    const workerMobile = createWorker.createWorker({
+        logger: m => console.log((m.progress)*100 + "%"), // Add logger here
     });
+
+    (async () => {
+        await workerMobile.load();
+        await workerMobile.loadLanguage('eng');
+        await workerMobile.initialize('eng');
+        const { data: { text } } = await workerMobile.recognize(`./uploads/${req.body.name}`);
+        console.log(text);
+        await workerMobile.terminate();
+        await res.status(200).json({
+            text: text,
+        });
+
+    })();
+    
 
 });
 

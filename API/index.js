@@ -4,6 +4,7 @@ const cors = require('cors');
 const morgan = require('morgan');
 const multer = require('multer');
 const createWorker = require('tesseract.js');
+const fs = require('fs');
 
 
 const app = express();
@@ -92,9 +93,10 @@ app.post('/ruwan', (req, res) => {
 
 app.post('/image' , (req, res) => {
     console.log('done');
-    console.log(req.body);
 
-    
+    fs.writeFile('uploads/image.png', req.body.image, {encoding: 'base64'}, function(err) {
+        console.log('File created');
+    });
 
     res.status(200).json({
         message : 'hello'

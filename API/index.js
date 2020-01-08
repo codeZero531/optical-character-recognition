@@ -109,12 +109,10 @@ app.post('/image' , (req, res) => {
         const { data: { text } } = await workerMobile.recognize(`./uploads/${req.body.name}`);
         console.log(text);
         await workerMobile.terminate();
-        await res.status(200).json({
-            text: text,
-        });
+        await res.status(200).send(text);
 
     })();
-    
+
 
 });
 

@@ -19,4 +19,19 @@ class MyApp extends StatelessWidget {
   }
 }
 
+class UploadImage extends StatefulWidget {
+  UploadImage() : super();
 
+  final String title = "Upload Image Demo";
+
+  @override
+  UploadImageState createState() => UploadImageState();
+}
+
+class UploadImageState extends State<UploadImage> {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return null;
+  }
+}

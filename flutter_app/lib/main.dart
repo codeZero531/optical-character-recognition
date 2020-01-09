@@ -134,7 +134,18 @@ class UploadImageState extends State<UploadImage> {
             SizedBox(
               height: 20.0,
             ),
-            //
+            Expanded(
+              flex: 1,
+              child: Text(
+                status,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.w400,
+                  fontSize: 10.0,
+                ),
+              ),
+            ),
             SizedBox(
               height: 20.0,
             ),

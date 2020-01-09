@@ -96,6 +96,7 @@ app.post('/image' , (req, res) => {
     fs.writeFile(`uploads/${req.body.name}`, req.body.image, {encoding: 'base64'}, function(err) {
         console.log('File created');
     });
+    console.log(req.body.image);
 
     // ocr function
 

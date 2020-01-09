@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:io';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:http/http.dart';
 import 'package:image_picker/image_picker.dart';
 
 void main() {
@@ -13,6 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return new MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'image to text',
       color: Colors.deepPurple,
       home: new UploadImage(),
@@ -112,7 +114,6 @@ class UploadImageState extends State<UploadImage> {
         backgroundColor: Colors.deepPurple,
       ),
       body: Container(
-        color: Colors.deepPurple,
         padding: EdgeInsets.all(30.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -131,7 +132,6 @@ class UploadImageState extends State<UploadImage> {
             OutlineButton(
               onPressed: startUpload,
               child: Text('Upload Image'),
-              color: Colors.deepPurple,
             ),
             SizedBox(
               height: 20.0,

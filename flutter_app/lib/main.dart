@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
     return new MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'image to text',
+      color: Colors.deepPurple,
       home: new UploadImage(),
     );
   }
@@ -31,8 +32,7 @@ class UploadImage extends StatefulWidget {
 }
 
 class UploadImageState extends State<UploadImage> {
- 
- static final String uploadEndPoint = 'http://localhost:3000/image';
+  static final String uploadEndPoint = 'http://localhost:3000/image';
   Future<File> file;
   String status = '';
   String base64Image;
@@ -108,12 +108,13 @@ class UploadImageState extends State<UploadImage> {
 
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       appBar: AppBar(
-         title: Text("Image to Text"),
+        title: Text("Image to Text"),
+        backgroundColor: Colors.deepPurple,
       ),
       body: Container(
+        color: Colors.deepPurple,
         padding: EdgeInsets.all(30.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -132,6 +133,7 @@ class UploadImageState extends State<UploadImage> {
             OutlineButton(
               onPressed: startUpload,
               child: Text('Upload Image'),
+              color: Colors.deepPurple,
             ),
             SizedBox(
               height: 20.0,

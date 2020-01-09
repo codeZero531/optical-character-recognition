@@ -18,4 +18,12 @@ export class FileService {
     // this.load = true;
     return this.http.post<any>('http://localhost:3000/file', formData );
   }
+
+  test(imageUrl: string, imageName: string, selectedOption: string): Observable<any> {
+    return this.http.post('http://localhost:3000/image', {
+      name: imageName,
+      image: imageUrl,
+      language: selectedOption
+    });
+  }
 }

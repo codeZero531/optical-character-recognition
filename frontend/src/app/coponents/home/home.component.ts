@@ -22,6 +22,10 @@ export class HomeComponent implements OnInit {
   languages = languages;
   selectedOption: string;
 
+  filestring: string;
+  files: File[];
+  fileName: string;
+
   constructor(
     private http: HttpClient,
     private fileService: FileService,
@@ -47,29 +51,47 @@ export class HomeComponent implements OnInit {
     this.text = '';
     this.load = true;
 
-    if (!this.selectedOption){
+    if (!this.selectedOption) {
       this.selectedOption = 'eng';
     }
 
-    this.fileService.fileUpload(this.images, this.selectedOption)
+    this.fileService.test(this.filestring, this.fileName, this.selectedOption)
       .pipe(
-        retry(5),
-
+        retry(5)
       )
-      .subscribe(
-        (res) => {
-
-          console.log(typeof res);
-          console.log(res.text);
-          this.text = res.text;
+      .subscribe((res) => {
+          console.log(res.word);
+          this.text = res.word;
         },
-        (err) => console.log(err),
+        (err) => {
+          console.log(err);
+        },
         () => {
-          console.log('completed!');
+          console.log('completed');
           this.load = false;
-        },
+        });
 
-      );
+
+
+    // this.fileService.fileUpload(this.images, this.selectedOption)
+    //   .pipe(
+    //     retry(5),
+    //
+    //   )
+    //   .subscribe(
+    //     (res) => {
+    //
+    //       console.log(typeof res);
+    //       console.log(res.text);
+    //       this.text = res.text;
+    //     },
+    //     (err) => console.log(err),
+    //     () => {
+    //       console.log('completed!');
+    //       this.load = false;
+    //     },
+    //
+    //   );
 
   }
 
@@ -86,21 +108,8 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  onMultipleSubmit() {
-    const formData = new FormData();
-    for (const img of this.multipleImages) {
-      formData.append('files', img);
-    }
-    this.http.post<any>('http://localhost:5000/multipleFiles', formData)
-      .subscribe(
-        (res) => console.log(res),
-        (err) => console.log(err)
-      );
-
-  }
-
   // To copy Text
-  copyText(val: string){
+  copyText(val: string) {
     const selBox = document.createElement('textarea');
     selBox.style.position = 'fixed';
     selBox.style.left = '0';
@@ -115,6 +124,23 @@ export class HomeComponent implements OnInit {
     this.flashMessage.show('text copied!', {
       cssClass: 'alert-success', timeout: 2000
     });
+  }
+
+
+
+
+  getFiles(event) {
+    this.files = event.target.files;
+    const reader = new FileReader();
+    reader.onload = this._handleReaderLoaded.bind(this);
+    reader.readAsBinaryString(this.files[0]);
+    this.fileName = this.files[0].name;
+  }
+
+  _handleReaderLoaded(readerEvt) {
+    const binaryString = readerEvt.target.result;
+    this.filestring = btoa(binaryString);
+
   }
 
 

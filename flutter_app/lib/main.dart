@@ -104,14 +104,43 @@ class UploadImageState extends State<UploadImage> {
     );
   }
 
- 
- 
- 
- 
- 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return null;
+    
+    return Scaffold(
+      appBar: AppBar(
+         title: Text("Image to Text"),
+      ),
+      body: Container(
+        padding: EdgeInsets.all(30.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            OutlineButton(
+              onPressed: chooseImage,
+              child: Text('Choose Image'),
+            ),
+            SizedBox(
+              height: 20.0,
+            ),
+            showImage(),
+            SizedBox(
+              height: 20.0,
+            ),
+            OutlineButton(
+              onPressed: startUpload,
+              child: Text('Upload Image'),
+            ),
+            SizedBox(
+              height: 20.0,
+            ),
+            //
+            SizedBox(
+              height: 20.0,
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

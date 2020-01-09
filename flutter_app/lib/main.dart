@@ -14,7 +14,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return new MaterialApp(
-      debugShowCheckedModeBanner: false,
       title: 'image to text',
       color: Colors.deepPurple,
       home: new UploadImage(),

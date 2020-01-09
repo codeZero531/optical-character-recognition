@@ -276,7 +276,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         RequestQueue queue = Volley.newRequestQueue(this);  // this = context
-        String url = "http://localhost:3000/ruwan";
+        String url = "http://10.0.2.2:3000/ruwan";
         StringRequest postRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>()
                 {

@@ -20,7 +20,7 @@ const PORT = process.env.PORT || 3000;
 
 app.post('/image', (req, res) => {
     fs.writeFile(`uploads/${req.body.name}`, req.body.image, {encoding: 'base64'}, function (err) {
-        console.log('File created');
+        console.log('file saved');
     });
 
     var selectedLanguage;
@@ -30,7 +30,6 @@ app.post('/image', (req, res) => {
     } else {
         selectedLanguage = 'eng';
     }
-    console.log(selectedLanguage);
 
     // ocr function
     const workerMobile = createWorker.createWorker({
@@ -42,7 +41,7 @@ app.post('/image', (req, res) => {
         await workerMobile.loadLanguage(selectedLanguage);
         await workerMobile.initialize(selectedLanguage);
         const {data: {text}} = await workerMobile.recognize(`./uploads/${req.body.name}`);
-        console.log(text);
+        // console.log(text);
         await workerMobile.terminate();
         await res.status(200).json({
             word: text

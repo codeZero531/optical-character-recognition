@@ -7,6 +7,7 @@ const createWorker = require('tesseract.js');
 const fs = require('fs');
 
 
+
 const app = express();
 
 app.use(express.json({limit:'100mb',  extended: true }));
@@ -99,7 +100,7 @@ app.post('/image' , (req, res) => {
     // ocr function
 
     const workerMobile = createWorker.createWorker({
-        logger: m => console.log((m.progress)*100 + "%"), // Add logger here
+        logger: m => console.log(((m.progress)*100) + "%"), // Add logger here
     });
 
     (async () => {

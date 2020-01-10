@@ -1,23 +1,36 @@
 export const languages = [
   {
-    name : 'English',
-    value : 'eng'
+    name: 'Arabic',
+    value: 'ara'
   },
   {
-    name : 'Chinese - Traditional',
-    value : 'chi_tra'
+    name: 'Chinese - Traditional',
+    value: 'chi_tra'
   },
   {
-    name : 'Chinese - Simplified',
-    value : 'chi_sim'
+    name: 'Chinese - Simplified',
+    value: 'chi_sim'
   },
   {
-    name : 'French',
-    value : 'fra'
+    name: 'English',
+    value: 'eng'
   },
   {
-    name : 'Japanese',
-    value : 'jpn'
+    name: 'French',
+    value: 'fra'
+  },
+  {
+    name: 'German',
+    value: 'deu'
+  },
+  {
+    name: 'Japanese',
+    value: 'jpn'
+  },
+
+  {
+    name: 'Korean',
+    value: 'kor'
   }
 
 ];

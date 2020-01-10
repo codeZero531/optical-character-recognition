@@ -126,6 +126,12 @@ class UploadImageState extends State<UploadImage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             OutlineButton(
+              onPressed:  getImage(true),
+              child: Text('Camera',style: TextStyle(fontSize: 16.0),),
+              shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
+              borderSide: BorderSide(color: Colors.blue),
+            ),
+            OutlineButton(
               onPressed: chooseImage,
               child: Text('Choose Image',style: TextStyle(fontSize: 16.0),),
               shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),

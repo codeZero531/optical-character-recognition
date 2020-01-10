@@ -44,7 +44,7 @@ export class HomeComponent implements OnInit {
       this.selectedOption = 'eng';
     }
 
-    this.fileService.test(this.fileString, this.fileName, this.selectedOption)
+    this.fileService.fileUpload(this.fileString, this.fileName, this.selectedOption)
       .pipe(
         retry(5)
       )
@@ -68,7 +68,6 @@ export class HomeComponent implements OnInit {
       const reader = new FileReader();
       reader.onload = (e: any) => {
         this.imgSrc = e.target.result;
-        console.log(e.target.result);
       };
 
       reader.readAsDataURL(event.target.files[0]);

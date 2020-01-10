@@ -11,16 +11,8 @@ export class FileService {
     private http: HttpClient
   ) { }
 
-  fileUpload(file: File, selectedOption: string): Observable<any> {
-    const formData = new FormData();
-    formData.append('file', file);
-    formData.append('language', selectedOption);
-    // this.load = true;
-    return this.http.post<any>('http://localhost:3000/file', formData );
-  }
-
-  test(imageUrl: string, imageName: string, selectedOption: string): Observable<any> {
-    return this.http.post('http://localhost:3000/image', {
+  fileUpload(imageUrl: string, imageName: string, selectedOption: string): Observable<any> {
+    return this.http.post('https://ocr-api.herokuapp.com/image', {
       name: imageName,
       image: imageUrl,
       language: selectedOption

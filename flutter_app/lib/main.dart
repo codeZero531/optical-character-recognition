@@ -114,8 +114,10 @@ class UploadImageState extends State<UploadImage> {
       appBar: AppBar(
         title: Text("Image to Text"),
         centerTitle: true,
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: Colors.black38,
       ),
+       backgroundColor: Colors.blueGrey,
+
       body: Container(
         padding: EdgeInsets.all(30.0),
         child: Column(
@@ -124,6 +126,7 @@ class UploadImageState extends State<UploadImage> {
             OutlineButton(
               onPressed: chooseImage,
               child: Text('Choose Image'),
+              shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0))
             ),
             SizedBox(
               height: 20.0,
@@ -135,6 +138,7 @@ class UploadImageState extends State<UploadImage> {
             OutlineButton(
               onPressed: startUpload,
               child: Text('Upload Image'),
+              shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0))
             ),
             SizedBox(
               height: 20.0,

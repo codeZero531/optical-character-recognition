@@ -35,6 +35,7 @@ class UploadImage extends StatefulWidget {
 
 class UploadImageState extends State<UploadImage> {
   static final String uploadEndPoint = 'http://localhost:3000/image';
+  File _imageFile;
   Future<File> file;
   String status = '';
   String base64Image;
@@ -78,6 +79,20 @@ class UploadImageState extends State<UploadImage> {
     String text = response.body;
     setStatus(text);
   }
+
+  Future getImage (bool isCamera) async{
+
+   File image;
+
+   if(isCamera){
+     image=await ImagePicker.pickImage(source: ImageSource.camera);
+   }else {
+     image=await ImagePicker.pickImage(source: ImageSource.gallery);
+   }
+   setState(() {
+     _imageFile=image;
+   });
+ }
 
   Widget showImage() {
     return FutureBuilder<File>(
@@ -126,7 +141,9 @@ class UploadImageState extends State<UploadImage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             OutlineButton(
-              onPressed:  getImage(true),
+              onPressed: (){
+                getImage(true);
+              }, 
               child: Text('Camera',style: TextStyle(fontSize: 16.0),),
               shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
               borderSide: BorderSide(color: Colors.blue),

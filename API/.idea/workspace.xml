@@ -2,15 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a2011d16-2652-4d8e-8750-bb197514bddf" name="Default Changelist" comment="">
+
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Mobile/app/src/main/java/ruwanbandara/photouploadfirebase/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Mobile/app/src/main/java/ruwanbandara/photouploadfirebase/MainActivity.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/models/Languages.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/models/Languages.ts" afterDir="false" />
+    </list>
+
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
@@ -24,6 +30,7 @@
       </file>
     </leaf>
   </component>
+
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -34,6 +41,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -67,6 +75,10 @@
       </pane>
     </panes>
   </component>
+
+  <component name="ProjectId" id="1VtMtDacLSHrsTe8eOFIRu3vVXo" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -76,24 +88,12 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="javascript.nodejs.core.library.configured.version" value="10.16.0" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.13.0" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager">
     <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
@@ -137,6 +137,7 @@
       <workItem from="1578326252772" duration="5078000" />
       <workItem from="1578326252772" duration="6407000" />
       <workItem from="1578326252772" duration="6407000" />
+
       <workItem from="1578464309670" duration="1339000" />
       <workItem from="1578505091994" duration="716000" />
     </task>
@@ -168,6 +169,16 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
   </component>
+
+      <workItem from="1578423304940" duration="1280000" />
+      <workItem from="1578485465168" duration="10592000" />
+      <workItem from="1578537489625" duration="4087000" />
+      <workItem from="1578591219308" duration="6823000" />
+      <workItem from="1578631522533" duration="90000" />
+    </task>
+    <servers />
+  </component>
+
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
@@ -176,21 +187,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="596" y="209" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578068331800" />
-    <state width="936" height="297" key="GridCell.Tab.0.bottom" timestamp="1578340936954">
+    <state x="1213" y="327" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1578595822362">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="936" height="297" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1578340936954" />
-    <state width="936" height="297" key="GridCell.Tab.0.center" timestamp="1578340936954">
+    <state x="1213" y="327" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1578595822362" />
+    <state width="1899" height="334" key="GridCell.Tab.0.bottom" timestamp="1578601108689">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="936" height="297" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1578340936954" />
-    <state width="936" height="297" key="GridCell.Tab.0.left" timestamp="1578340936954">
+    <state width="1899" height="334" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1578601108689" />
+    <state width="1899" height="334" key="GridCell.Tab.0.center" timestamp="1578601108689">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="936" height="297" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1578340936954" />
-    <state width="936" height="297" key="GridCell.Tab.0.right" timestamp="1578340936954">
+    <state width="1899" height="334" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1578601108689" />
+    <state width="1899" height="334" key="GridCell.Tab.0.left" timestamp="1578601108689">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+
     <state width="936" height="297" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1578334637594" />
   </component>
   <component name="editorHistoryManager">
@@ -201,5 +213,12 @@
         </state>
       </provider>
     </entry>
+
+    <state width="1899" height="334" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1578601108689" />
+    <state width="1899" height="334" key="GridCell.Tab.0.right" timestamp="1578601108689">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="334" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1578601108689" />
+
   </component>
 </project>

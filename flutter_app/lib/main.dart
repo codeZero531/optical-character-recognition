@@ -152,6 +152,7 @@ class UploadImageState extends State<UploadImage> {
               shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
               borderSide: BorderSide(color: Colors.blue),
             ),
+            new Padding(padding: const EdgeInsets.all(3.0),),
             OutlineButton(
               onPressed: chooseImage,
               child: Text('Choose Image',style: TextStyle(fontSize: 16.0),),
@@ -161,10 +162,10 @@ class UploadImageState extends State<UploadImage> {
             SizedBox(
               height: 20.0,
             ),
-            new Container(
-              child: showImage(),
+          
+            showImage(),
 
-            ),
+            
             // _imageFile==null ? Container() :Image.file(_imageFile,width:250.0,height: 250.0,color: Colors.grey,),
 
         

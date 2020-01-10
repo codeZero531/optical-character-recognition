@@ -102,6 +102,7 @@ class UploadImageState extends State<UploadImage> {
           return const Text(
             'No Image Selected',
             textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 14.0),
           );
         }
       },
@@ -117,6 +118,7 @@ class UploadImageState extends State<UploadImage> {
         backgroundColor: Colors.black38,
       ),
        backgroundColor: Colors.blueGrey,
+       
 
       body: Container(
         padding: EdgeInsets.all(30.0),
@@ -125,8 +127,9 @@ class UploadImageState extends State<UploadImage> {
           children: <Widget>[
             OutlineButton(
               onPressed: chooseImage,
-              child: Text('Choose Image'),
-              shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0))
+              child: Text('Choose Image',style: TextStyle(fontSize: 16.0),),
+              shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
+              borderSide: BorderSide(color: Colors.blue),
             ),
             SizedBox(
               height: 20.0,
@@ -137,8 +140,9 @@ class UploadImageState extends State<UploadImage> {
             ),
             OutlineButton(
               onPressed: startUpload,
-              child: Text('Upload Image'),
-              shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0))
+              child: Text('Upload Image',style: TextStyle(fontSize: 16.0),),
+              shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0),),
+              borderSide: BorderSide(color: Colors.blue),
             ),
             SizedBox(
               height: 20.0,
@@ -151,7 +155,7 @@ class UploadImageState extends State<UploadImage> {
                 style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.w400,
-                  fontSize: 10.0,
+                  fontSize: 13.0,
                 ),
               ),
             ),

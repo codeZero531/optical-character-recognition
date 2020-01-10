@@ -12,7 +12,7 @@ export class FileService {
   ) { }
 
   fileUpload(imageUrl: string, imageName: string, selectedOption: string): Observable<any> {
-    return this.http.post('https://ocr-api.herokuapp.com/image', {
+    return this.http.post('http://localhost:3000/image', {
       name: imageName,
       image: imageUrl,
       language: selectedOption

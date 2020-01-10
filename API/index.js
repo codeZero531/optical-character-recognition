@@ -32,17 +32,17 @@ app.post('/image', (req, res) => {
     }
 
     // ocr function
-    const workerMobile = createWorker.createWorker({
-        logger: m => console.log(((m.progress) * 100) + "%"), // Add logger here
+    const worker = createWorker.createWorker({
+        logger: m => console.log(Math.ceil((m.progress) * 100) + "%"), // Add logger here
     });
 
     (async () => {
-        await workerMobile.load();
-        await workerMobile.loadLanguage(selectedLanguage);
-        await workerMobile.initialize(selectedLanguage);
-        const {data: {text}} = await workerMobile.recognize(`./uploads/${req.body.name}`);
+        await worker.load();
+        await worker.loadLanguage(selectedLanguage);
+        await worker.initialize(selectedLanguage);
+        const {data: {text}} = await worker.recognize(`./uploads/${req.body.name}`);
         // console.log(text);
-        await workerMobile.terminate();
+        await worker.terminate();
         await res.status(200).json({
             word: text
         });

@@ -134,75 +134,84 @@ class UploadImageState extends State<UploadImage> {
       appBar: AppBar(
         title: Text("Image to Text"),
         centerTitle: true,
-        backgroundColor: Colors.black38,
+        backgroundColor: Colors.black45,
       ),
-       backgroundColor: Colors.orange[100],
+       backgroundColor: Colors.blue,
+              
        
-
-      body: Container(
-        padding: EdgeInsets.all(30.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            OutlineButton(
-              onPressed: (){
-                getImage(true);
-              }, 
-              child: Text('Take Camera',style: TextStyle(fontSize: 16.0),),
-              shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
-              borderSide: BorderSide(color: Colors.blue),
-            ),
-            new Padding(padding: const EdgeInsets.all(3.0),),
-            OutlineButton(
-              onPressed: chooseImage,
-              child: Text('Choose Image',style: TextStyle(fontSize: 16.0),),
-              shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
-              borderSide: BorderSide(color: Colors.blue),
-            ),
-            SizedBox(
-              height: 20.0,
-            ),
-          
-            showImage(),
-
-            
-            // _imageFile==null ? Container() :Image.file(_imageFile,width:250.0,height: 250.0,color: Colors.grey,),
-
-        
-           
-           
-            
-            
-            SizedBox(
-              height: 20.0,
-            ),
-            OutlineButton(
-              onPressed: startUpload,
-              child: Text('Upload Image',style: TextStyle(fontSize: 16.0),),
-              shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0),),
-              borderSide: BorderSide(color: Colors.blue),
-            ),
-            SizedBox(
-              height: 20.0,
-            ),
-            Expanded(
-              flex: 1,
-              child: Text(
-                status,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.w400,
-                  fontSize: 13.0,
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 20.0,
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
+             body: Container(
+               padding: EdgeInsets.all(30.0),
+               decoration: BoxDecoration(
+                gradient: LinearGradient(
+              begin: Alignment.topRight,
+              end: Alignment.bottomLeft,
+              colors: [Colors.yellow[300], Colors.pink[100]])),
+               child: Column(
+                 
+                 crossAxisAlignment: CrossAxisAlignment.stretch,
+                 children: <Widget>[
+                   
+                   OutlineButton(
+                     onPressed: (){
+                       getImage(true);
+                     }, 
+                     child: Text('Take Camera',style: TextStyle(fontSize: 16.0),),
+                     shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
+                     borderSide: BorderSide(color: Colors.blue),
+                   ),
+                   new Padding(padding: const EdgeInsets.all(5.0),),
+                   OutlineButton(
+                     onPressed: chooseImage,
+                     child: Text('Choose Image',style: TextStyle(fontSize: 16.0),),
+                     shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
+                     borderSide: BorderSide(color: Colors.blue),
+                   ),
+                   SizedBox(
+                     height: 20.0,
+                   ),
+                 
+                   showImage(),
+       
+                   
+                   // _imageFile==null ? Container() :Image.file(_imageFile,width:250.0,height: 250.0,color: Colors.grey,),
+       
+               
+                  
+                  
+                   
+                   
+                   SizedBox(
+                     height: 20.0,
+                   ),
+                   OutlineButton(
+                     onPressed: startUpload,
+                     child: Text('Upload Image',style: TextStyle(fontSize: 16.0),),
+                     shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0),),
+                     borderSide: BorderSide(color: Colors.blue),
+                   ),
+                   SizedBox(
+                     height: 20.0,
+                   ),
+                   Expanded(
+                     flex: 1,
+                     child: Text(
+                       status,
+                       textAlign: TextAlign.center,
+                       style: TextStyle(
+                         color: Colors.black,
+                         fontWeight: FontWeight.w400,
+                         fontSize: 13.0,
+                       ),
+                     ),
+                   ),
+                   SizedBox(
+                     height: 20.0,
+                   ),
+                 ],
+               ),
+             ),
+           );
+         }
+       }
+       
+       

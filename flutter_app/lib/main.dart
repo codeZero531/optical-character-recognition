@@ -5,6 +5,7 @@ import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
 import 'package:image_picker/image_picker.dart';
 
+
 void main() {
   runApp(new MyApp());
 }
@@ -12,7 +13,7 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
+    
     return new MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'image to text',
@@ -112,6 +113,7 @@ class UploadImageState extends State<UploadImage> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Image to Text"),
+        centerTitle: true,
         backgroundColor: Colors.deepPurple,
       ),
       body: Container(

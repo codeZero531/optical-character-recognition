@@ -102,9 +102,13 @@ class UploadImageState extends State<UploadImage> {
             null != snapshot.data) {
           tmpFile = snapshot.data;
           base64Image = base64Encode(snapshot.data.readAsBytesSync());
+           
+
           return Flexible(
+             
             child: Image.file(
               snapshot.data,
+              
               fit: BoxFit.fill,
             ),
           );
@@ -144,7 +148,7 @@ class UploadImageState extends State<UploadImage> {
               onPressed: (){
                 getImage(true);
               }, 
-              child: Text('Camera',style: TextStyle(fontSize: 16.0),),
+              child: Text('Take Camera',style: TextStyle(fontSize: 16.0),),
               shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
               borderSide: BorderSide(color: Colors.blue),
             ),
@@ -157,7 +161,16 @@ class UploadImageState extends State<UploadImage> {
             SizedBox(
               height: 20.0,
             ),
-            showImage(),
+            new Container(
+              child: showImage(),
+
+            ),
+            // _imageFile==null ? Container() :Image.file(_imageFile,width:250.0,height: 250.0,color: Colors.grey,),
+
+        
+           
+           
+            
             
             SizedBox(
               height: 20.0,

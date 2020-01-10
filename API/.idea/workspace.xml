@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a2011d16-2652-4d8e-8750-bb197514bddf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/models/Languages.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/models/Languages.ts" afterDir="false" />
-    </list>
+    <list default="true" id="a2011d16-2652-4d8e-8750-bb197514bddf" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -84,6 +82,7 @@
       <workItem from="1578537489625" duration="4087000" />
       <workItem from="1578591219308" duration="6823000" />
       <workItem from="1578631522533" duration="90000" />
+      <workItem from="1578632385510" duration="150000" />
     </task>
     <servers />
   </component>

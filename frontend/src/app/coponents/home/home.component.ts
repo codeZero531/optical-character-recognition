@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {map, retry} from 'rxjs/operators';
 import {FileService} from '../../services/file.service';
@@ -17,12 +17,12 @@ export class HomeComponent implements OnInit {
 
   load: boolean;
   selectedImage: any;
-  imgSrc: any;
+  imgSrc: '../../../assets/image.image.jpg';
 
   languages = languages;
   selectedOption: string;
 
-  filestring: string;
+  fileString: string;
   files: File[];
   fileName: string;
 
@@ -30,21 +30,10 @@ export class HomeComponent implements OnInit {
     private http: HttpClient,
     private fileService: FileService,
     private flashMessage: FlashMessagesService
-  ) { }
+  ) {
+  }
 
   ngOnInit() {
-  }
-
-  // get selected image
-  featuredPhotoSelected(event: any) {
-    const file  = event.target.files[0];
-    this.images = file;
-
-  }
-
-  selectMultipleImage(event: any) {
-    this.multipleImages  = event.target.files;
-
   }
 
   onSubmit() {
@@ -55,7 +44,7 @@ export class HomeComponent implements OnInit {
       this.selectedOption = 'eng';
     }
 
-    this.fileService.test(this.filestring, this.fileName, this.selectedOption)
+    this.fileService.test(this.fileString, this.fileName, this.selectedOption)
       .pipe(
         retry(5)
       )
@@ -71,35 +60,17 @@ export class HomeComponent implements OnInit {
           this.load = false;
         });
 
-
-
-    // this.fileService.fileUpload(this.images, this.selectedOption)
-    //   .pipe(
-    //     retry(5),
-    //
-    //   )
-    //   .subscribe(
-    //     (res) => {
-    //
-    //       console.log(typeof res);
-    //       console.log(res.text);
-    //       this.text = res.text;
-    //     },
-    //     (err) => console.log(err),
-    //     () => {
-    //       console.log('completed!');
-    //       this.load = false;
-    //     },
-    //
-    //   );
-
   }
 
   // selected photo preview
   showPreview(event: any) {
     if (event.target.files && event.target.files[0]) {
-      const  reader = new FileReader();
-      reader.onload = (e: any) => this.imgSrc = e.target.result;
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        this.imgSrc = e.target.result;
+        console.log(e.target.result);
+      };
+
       reader.readAsDataURL(event.target.files[0]);
       this.selectedImage = event.target.files[0];
       console.log(reader);
@@ -127,8 +98,6 @@ export class HomeComponent implements OnInit {
   }
 
 
-
-
   getFiles(event) {
     this.files = event.target.files;
     const reader = new FileReader();
@@ -139,7 +108,7 @@ export class HomeComponent implements OnInit {
 
   _handleReaderLoaded(readerEvt) {
     const binaryString = readerEvt.target.result;
-    this.filestring = btoa(binaryString);
+    this.fileString = btoa(binaryString);
 
   }
 

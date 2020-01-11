@@ -80,8 +80,6 @@ class UploadImageState extends State<UploadImage> {
   upload(String fileName) async {
     // set up POST request
     String url = 'http://10.0.2.2:3000/image';
-//    Map<String, String> headers = {"Content-type": "application/json"};
-
     // make POST request
     Response response = await post(url, body: {
       "image": base64Image,

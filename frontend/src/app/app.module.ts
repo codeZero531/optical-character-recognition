@@ -23,6 +23,7 @@ import {AngularFireAuthModule} from '@angular/fire/auth';
 import {FlashMessagesModule} from 'angular2-flash-messages';
 import {HttpClientModule} from '@angular/common/http';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
+import { FooterComponent } from './coponents/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {AngularFirestoreModule} from '@angular/fire/firestore';
     NavbarComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

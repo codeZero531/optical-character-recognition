@@ -117,7 +117,7 @@ class UploadImageState extends State<UploadImage> {
         centerTitle: true,
         backgroundColor: Colors.black38,
       ),
-       backgroundColor: Colors.blueGrey,
+       backgroundColor: Colors.orange[100],
        
 
       body: Container(
@@ -135,6 +135,7 @@ class UploadImageState extends State<UploadImage> {
               height: 20.0,
             ),
             showImage(),
+            
             SizedBox(
               height: 20.0,
             ),

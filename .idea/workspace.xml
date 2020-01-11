@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6733403c-50f7-4295-8d72-5a43dbb20d43" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/static webpage/images/ocr.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static webpage/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/static webpage/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -75,8 +76,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static webpage/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="24">
-              <caret line="89" column="47" selection-start-line="89" selection-start-column="47" selection-end-line="89" selection-end-column="47" />
+            <state relative-caret-position="240">
+              <caret line="95" column="54" selection-start-line="95" selection-start-column="54" selection-end-line="95" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -148,6 +149,12 @@
               <item name="optical-character-recognition" type="462c0819:PsiDirectoryNode" />
               <item name="static webpage" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="optical-character-recognition" type="b2602c69:ProjectViewProjectNode" />
+              <item name="optical-character-recognition" type="462c0819:PsiDirectoryNode" />
+              <item name="static webpage" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -199,12 +206,12 @@
       <option name="presentableId" value="Default" />
       <updated>1578661702330</updated>
       <workItem from="1578661703683" duration="2622000" />
-      <workItem from="1578725712360" duration="3010000" />
+      <workItem from="1578725712360" duration="3523000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5632000" />
+    <option name="totallyTimeSpent" value="6145000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -329,8 +336,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static webpage/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="89" column="47" selection-start-line="89" selection-start-column="47" selection-end-line="89" selection-end-column="47" />
+        <state relative-caret-position="240">
+          <caret line="95" column="54" selection-start-line="95" selection-start-column="54" selection-end-line="95" selection-end-column="54" />
         </state>
       </provider>
     </entry>

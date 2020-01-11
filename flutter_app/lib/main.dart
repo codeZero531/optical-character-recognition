@@ -48,22 +48,18 @@ class UploadImageState extends State<UploadImage> {
   chooseImage() {
     setState(() {
       file = ImagePicker.pickImage(source: ImageSource.gallery);
+//      file = ImagePicker.pickImage(source: ImageSource.camera);
     });
     setStatus('');
   }
+
   //get camera
-  Future getImage (bool isCamera) async{
+  getImage() {
+    setState(() {
 
-   File image;
-
-   if(isCamera){
-     image=await ImagePicker.pickImage(source: ImageSource.camera);
-   }else {
-     image=await ImagePicker.pickImage(source: ImageSource.gallery);
-   }
-   setState(() {
-     tmpFile=image;
-   });
+      file = ImagePicker.pickImage(source: ImageSource.camera);
+    });
+    setStatus('');
    
  }
  
@@ -165,7 +161,7 @@ class UploadImageState extends State<UploadImage> {
                    
                    OutlineButton(
                      onPressed: (){
-                       getImage(true);
+                       getImage();
                      }, 
                      child: Text('Take Camera',style: TextStyle(fontSize: 16.0),),
                      shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),

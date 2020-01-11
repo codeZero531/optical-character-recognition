@@ -45,10 +45,10 @@ class UploadImageState extends State<UploadImage> {
   
   String errMessage = 'Error Uploading Image';
 
+  //choose image from gallery
   chooseImage() {
     setState(() {
       file = ImagePicker.pickImage(source: ImageSource.gallery);
-//      file = ImagePicker.pickImage(source: ImageSource.camera);
     });
     setStatus('');
   }

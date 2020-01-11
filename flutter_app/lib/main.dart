@@ -1,9 +1,6 @@
-
-
 import 'package:flutter/material.dart';
 import 'dart:io';
 import 'dart:convert';
-import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -15,7 +12,6 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    
     return new MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'image to text',
@@ -36,13 +32,12 @@ class UploadImage extends StatefulWidget {
 }
 
 class UploadImageState extends State<UploadImage> {
-  static final String uploadEndPoint = 'http://localhost:3000/image';
-  
+
   Future<File> file;
   String status = '';
   String base64Image;
   File tmpFile;
-  
+
   String errMessage = 'Error Uploading Image';
 
   //choose image from gallery
@@ -56,13 +51,11 @@ class UploadImageState extends State<UploadImage> {
   //get camera
   getImage() {
     setState(() {
-
       file = ImagePicker.pickImage(source: ImageSource.camera);
     });
     setStatus('');
-   
- }
- 
+  }
+
 
   setStatus(String message) {
     setState(() {
@@ -76,17 +69,18 @@ class UploadImageState extends State<UploadImage> {
       setStatus(errMessage);
       return;
     }
-    String fileName = tmpFile.path.split('/').last;
-    
+    String fileName = tmpFile.path
+        .split('/')
+        .last;
+
     upload(fileName);
   }
-  
-   
+
 
   upload(String fileName) async {
     // set up POST request
     String url = 'http://10.0.2.2:3000/image';
-    Map<String, String> headers = {"Content-type": "application/json"};
+//    Map<String, String> headers = {"Content-type": "application/json"};
 
     // make POST request
     Response response = await post(url, body: {
@@ -101,23 +95,22 @@ class UploadImageState extends State<UploadImage> {
 
   Widget showImage() {
     return FutureBuilder<File>(
-      
+
       future: file,
       builder: (BuildContext context, AsyncSnapshot<File> snapshot) {
         if (snapshot.connectionState == ConnectionState.done &&
             null != snapshot.data) {
           tmpFile = snapshot.data;
           base64Image = base64Encode(snapshot.data.readAsBytesSync());
-         
-           
+
 
           return Flexible(
-             
+
             child: Image.file(
               snapshot.data,
-              
+
               fit: BoxFit.fill,
-               
+
             ),
           );
         } else if (null != snapshot.error) {
@@ -144,82 +137,89 @@ class UploadImageState extends State<UploadImage> {
         centerTitle: true,
         backgroundColor: Colors.black45,
       ),
-       backgroundColor: Colors.blue,
-              
-       
-             body: Container(
-               padding: EdgeInsets.all(30.0),
-               decoration: BoxDecoration(
-                gradient: LinearGradient(
-              begin: Alignment.topRight,
-              end: Alignment.bottomLeft,
-              colors: [Colors.yellow[300], Colors.pink[100]])),
-               child: Column(
-                 
-                 crossAxisAlignment: CrossAxisAlignment.stretch,
-                 children: <Widget>[
-                   
-                   OutlineButton(
-                     onPressed: (){
-                       getImage();
-                     }, 
-                     child: Text('Take Camera',style: TextStyle(fontSize: 16.0),),
-                     shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
-                     borderSide: BorderSide(color: Colors.blue),
-                   ),
-                   new Padding(padding: const EdgeInsets.all(5.0),),
-                   OutlineButton(
-                     onPressed: chooseImage,
-                     child: Text('Choose Image',style: TextStyle(fontSize: 16.0),),
-                     shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
-                     borderSide: BorderSide(color: Colors.blue),
-                   ),
-                   SizedBox(
-                     height: 20.0,
-                   ),
-                 
-                   showImage(),
-       
-                   
-                   // _imageFile==null ? Container() :Image.file(_imageFile,width:250.0,height: 250.0,color: Colors.grey,),
-       
-               
-                  
-                  
-                   
-                   
-                   SizedBox(
-                     height: 20.0,
-                   ),
-                   OutlineButton(
-                     onPressed: startUpload,
-                     child: Text('Upload Image',style: TextStyle(fontSize: 16.0),),
-                     shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0),),
-                     borderSide: BorderSide(color: Colors.blue),
-                   ),
-                   SizedBox(
-                     height: 20.0,
-                   ),
-                   Expanded(
-                     flex: 1,
-                     child: Text(
-                       status,
-                       textAlign: TextAlign.center,
-                       style: TextStyle(
-                         color: Colors.black,
-                         fontWeight: FontWeight.w400,
-                         fontSize: 13.0,
-                       ),
-                     ),
-                   ),
-                   SizedBox(
-                     height: 20.0,
-                   ),
-                 ],
-               ),
-             ),
-           );
-         }
-       }
+      backgroundColor: Colors.blue,
+
+
+      body: Container(
+        padding: EdgeInsets.all(30.0),
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.topRight,
+                end: Alignment.bottomLeft,
+                colors: [Colors.yellow[300], Colors.pink[100]])),
+        child: Column(
+
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+
+            OutlineButton(
+              onPressed: () {
+                getImage();
+              },
+              child: Text('Take Camera', style: TextStyle(fontSize: 16.0),),
+              shape: new RoundedRectangleBorder(
+                  borderRadius: new BorderRadius.circular(30.0)),
+              borderSide: BorderSide(color: Colors.blue),
+            ),
+            new Padding(padding: const EdgeInsets.all(5.0),),
+            Center(
+              child: Text(
+                "or",
+                style: TextStyle(fontSize: 16.0),
+                textAlign: TextAlign.center,
+              ),
+            ),
+
+            OutlineButton(
+              onPressed: chooseImage,
+              child: Text('Choose Image', style: TextStyle(fontSize: 16.0),),
+              shape: new RoundedRectangleBorder(
+                  borderRadius: new BorderRadius.circular(30.0)),
+              borderSide: BorderSide(color: Colors.blue),
+            ),
+            SizedBox(
+              height: 20.0,
+            ),
+
+            showImage(),
+
+
+            // _imageFile==null ? Container() :Image.file(_imageFile,width:250.0,height: 250.0,color: Colors.grey,),
+
+
+            SizedBox(
+              height: 20.0,
+            ),
+            OutlineButton(
+              onPressed: startUpload,
+              child: Text('Upload Image', style: TextStyle(fontSize: 16.0),),
+              shape: new RoundedRectangleBorder(
+                borderRadius: new BorderRadius.circular(30.0),),
+              borderSide: BorderSide(color: Colors.blue),
+            ),
+            SizedBox(
+              height: 20.0,
+            ),
+            Expanded(
+              flex: 1,
+              child: Text(
+                status,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.w400,
+                  fontSize: 13.0,
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 20.0,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
        
        

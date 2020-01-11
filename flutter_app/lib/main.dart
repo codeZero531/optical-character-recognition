@@ -1,3 +1,5 @@
+
+
 import 'package:flutter/material.dart';
 import 'dart:io';
 import 'dart:convert';
@@ -39,7 +41,8 @@ class UploadImageState extends State<UploadImage> {
   Future<File> file;
   String status = '';
   String base64Image;
-  File tmpFile,_imageFile;
+  File tmpFile;
+  
   String errMessage = 'Error Uploading Image';
 
   chooseImage() {
@@ -55,11 +58,15 @@ class UploadImageState extends State<UploadImage> {
 
    if(isCamera){
      image=await ImagePicker.pickImage(source: ImageSource.camera);
+   }else {
+     image=await ImagePicker.pickImage(source: ImageSource.gallery);
    }
    setState(() {
-     _imageFile=image;
+     tmpFile=image;
    });
+   
  }
+ 
 
   setStatus(String message) {
     setState(() {
@@ -74,9 +81,10 @@ class UploadImageState extends State<UploadImage> {
       return;
     }
     String fileName = tmpFile.path.split('/').last;
+    
     upload(fileName);
   }
-  // get the camera
+  
    
 
   upload(String fileName) async {
@@ -97,12 +105,14 @@ class UploadImageState extends State<UploadImage> {
 
   Widget showImage() {
     return FutureBuilder<File>(
+      
       future: file,
       builder: (BuildContext context, AsyncSnapshot<File> snapshot) {
         if (snapshot.connectionState == ConnectionState.done &&
             null != snapshot.data) {
           tmpFile = snapshot.data;
           base64Image = base64Encode(snapshot.data.readAsBytesSync());
+         
            
 
           return Flexible(
@@ -111,6 +121,7 @@ class UploadImageState extends State<UploadImage> {
               snapshot.data,
               
               fit: BoxFit.fill,
+               
             ),
           );
         } else if (null != snapshot.error) {

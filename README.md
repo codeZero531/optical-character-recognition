@@ -1,13 +1,36 @@
 # optical-character-recognition
 
-#Design
-In the design folder we add the design for the ocr project
+### Team Members
+1. SE/2016/007 - janakaedirisinghe
+2. SE/2016/052 - ruwanbandara
+3. SE/2016/032 - pankajan05
+4. SE/2016/049 - wasalas893
 
-#flutter App
-It have the mobile application that design using the flutter 
+# Folder Structure
 
-#API 
-It have the backend files.
+* [Design] - In the design folder we add the design for the ocr project
+* [flutter App] - It have the mobile application that design using the flutter.
+* [API] - It have the backend files.
+* [frontend] - It have the frontend files. We use angular for create the frontend. It have the login, user registration and the OCR features.
 
-#frontend
-It have the frontend files. We use angular for create the frontend. It have the login, user registration and the OCR features
+
+### Technology
+
+Dillinger uses a number of open source projects to work properly:
+
+* [Angular8] - HTML enhanced for web apps!
+* [Angular Bootstrap] - great UI boilerplate for modern web apps.
+* [Angular Material] - great UI boilerplate for modern web apps.
+* [node.js] - evented I/O for the backend.
+* [Express] - fast node.js network app framework.
+* [Tesseract.js] - Pure Javascript port of the popular Tesseract OCR engine.
+* [Flutter] - Mobile Application.
+
+
+
+
+
+
+
+
+

@@ -79,7 +79,8 @@ class UploadImageState extends State<UploadImage> {
 
   upload(String fileName) async {
     // set up POST request
-    String url = 'http://10.0.2.2:3000/image';
+//    String url = 'http://10.0.2.2:3000/image';
+    String url = 'https://ocr-api.herokuapp.com/image';
     // make POST request
     Response response = await post(url, body: {
       "image": base64Image,

@@ -33,14 +33,6 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  registerNavigate() {
-    this.router.navigate(['register']);
-  }
-
-  passwordResetNavigate() {
-    this.router.navigate(['password-reset']);
-  }
-
   getErrorMessage() {
     return this.formControls.email.hasError('required') ? 'You must enter a value' :
       this.formControls.email.hasError('email') ? 'Not a valid email' :

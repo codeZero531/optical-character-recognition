@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {Observable} from 'rxjs';
-import { Router} from '@angular/router';
+import {Router} from '@angular/router';
 import {User} from '../models/User';
 import {AngularFirestore} from '@angular/fire/firestore';
 
@@ -15,7 +15,8 @@ export class AuthService {
     private afAuth: AngularFireAuth,
     private router: Router,
     private db: AngularFirestore
-  ) { }
+  ) {
+  }
 
   getUserState(): Observable<any> {
     return this.afAuth.authState;
@@ -27,23 +28,23 @@ export class AuthService {
         .then(userData => {
           resolve(userData);
 
-      }, err => reject(err));
+        }, err => reject(err));
     });
   }
 
   register(user) {
-      return new Promise((resolve, reject) => {
-        this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password)
-          .then(
-            userData => {
-              resolve(userData);
-              this.newUser = user;
-              userData.user.updateProfile({displayName: user.name});
-              this.insertUserData(userData);
-            },
-            err => reject(err)
-          );
-      });
+    return new Promise((resolve, reject) => {
+      this.afAuth.auth.createUserWithEmailAndPassword(user.email, user.password)
+        .then(
+          userData => {
+            resolve(userData);
+            this.newUser = user;
+            userData.user.updateProfile({displayName: user.name});
+            this.insertUserData(userData);
+          },
+          err => reject(err)
+        );
+    });
   }
 
   insertUserData(userCredential: firebase.auth.UserCredential) {
@@ -55,8 +56,11 @@ export class AuthService {
   }
 
   logOut() {
-    this.afAuth.auth.signOut();
-    this.router.navigate(['/login']);
+    this.afAuth.auth.signOut().then();
+    this.router.navigate(['/login'])
+      .then(() => {
+        window.location.reload();
+      });
 
   }
 }

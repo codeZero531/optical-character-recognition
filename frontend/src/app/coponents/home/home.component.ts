@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
 
   load: boolean;
   selectedImage: any;
-  imgSrc: '../../../assets/image.image.jpg';
+  imgSrc: any;
 
   languages = languages;
   selectedOption: string;
@@ -34,6 +34,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.imgSrc = 'assets/img/default.jpeg';
   }
 
   onSubmit() {

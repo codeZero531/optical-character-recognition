@@ -31,6 +31,9 @@ export class LoginComponent implements OnInit {
       password: [''],
     });
   }
+  registerNavigate() {
+    this.router.navigate(['/register']);
+  }
 
   getErrorMessage() {
     return this.formControls.email.hasError('required') ? 'You must enter a value' :
@@ -43,7 +46,10 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.loginForm.value.email, this.loginForm.value.password)
       .then( res => {
         console.log('logged!');
-        this.router.navigate(['/home']);
+        this.router.navigate(['/home'])
+          .then(() => {
+            window.location.reload();
+          });
         this.flashMessage.show('Logging successfully!' ,{
           cssClass: 'alert-success', timeout: 4000
         });

@@ -3,9 +3,13 @@
     <mat-icon class="example-icon" aria-hidden="false" aria-label="Example user verified icon">autorenew</mat-icon>
     <span> IMAGE TO TEXT</span>
     <div>
-      <a  mat-button *ngIf="!user" [routerLink]="'/login'"> Login </a>
+      <a mat-button *ngIf="!user" [routerLink]="'/login'"> Login </a>
       <a mat-button *ngIf="!user" [routerLink]="'/register'"> Register </a>
       <a mat-button *ngIf="user" (click)="logOut()"> Logout </a>
+      <a style="padding-right: 0px" mat-button *ngIf="user"> {{name}} </a>
+
     </div>
   </mat-toolbar-row>
 </mat-toolbar>
+
+

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../../services/auth.service';
 import {FlashMessagesService} from 'angular2-flash-messages';
@@ -18,7 +18,8 @@ export class LoginComponent implements OnInit {
     private authService: AuthService,
     private flashMessage: FlashMessagesService,
     private router: Router
-  ) { }
+  ) {
+  }
 
 
   get formControls() {
@@ -31,8 +32,13 @@ export class LoginComponent implements OnInit {
       password: [''],
     });
   }
+
   registerNavigate() {
     this.router.navigate(['/register']);
+  }
+
+  passwordResetNavigate() {
+    this.router.navigate(['/password-reset']);
   }
 
   getErrorMessage() {
@@ -44,19 +50,19 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     console.log(this.loginForm.get('email').value);
     this.authService.login(this.loginForm.value.email, this.loginForm.value.password)
-      .then( res => {
+      .then(res => {
         console.log('logged!');
         this.router.navigate(['/home'])
           .then(() => {
             window.location.reload();
           });
-        this.flashMessage.show('Logging successfully!' ,{
+        this.flashMessage.show('Logging successfully!', {
           cssClass: 'alert-success', timeout: 4000
         });
       })
-      .catch( err => {
+      .catch(err => {
         console.log(err.message);
-        this.flashMessage.show(err.message ,{
+        this.flashMessage.show(err.message, {
           cssClass: 'alert-danger', timeout: 4000
         });
       });

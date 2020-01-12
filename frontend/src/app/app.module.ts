@@ -24,6 +24,7 @@ import {FlashMessagesModule} from 'angular2-flash-messages';
 import {HttpClientModule} from '@angular/common/http';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import { FooterComponent } from './coponents/footer/footer.component';
+import { PaswordResetComponent } from './coponents/pasword-reset/pasword-reset.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { FooterComponent } from './coponents/footer/footer.component';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    PaswordResetComponent
   ],
   imports: [
     BrowserModule,

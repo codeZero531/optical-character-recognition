@@ -4,7 +4,6 @@ import 'dart:convert';
 import 'package:http/http.dart';
 import 'package:image_picker/image_picker.dart';
 
-
 void main() {
   runApp(new MyApp());
 }
@@ -21,7 +20,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-
 class UploadImage extends StatefulWidget {
   UploadImage() : super();
 
@@ -32,7 +30,6 @@ class UploadImage extends StatefulWidget {
 }
 
 class UploadImageState extends State<UploadImage> {
-
   Future<File> file;
   String status = '';
   String base64Image;
@@ -40,8 +37,11 @@ class UploadImageState extends State<UploadImage> {
 
   String errMessage = 'Error Uploading Image';
 
+  var txt = TextEditingController();
+
   //choose image from gallery
   chooseImage() {
+    txt.text = " ";
     setState(() {
       file = ImagePicker.pickImage(source: ImageSource.gallery);
     });
@@ -50,12 +50,12 @@ class UploadImageState extends State<UploadImage> {
 
   //get camera
   getImage() {
+    txt.text = " ";
     setState(() {
       file = ImagePicker.pickImage(source: ImageSource.camera);
     });
     setStatus('');
   }
-
 
   setStatus(String message) {
     setState(() {
@@ -69,18 +69,15 @@ class UploadImageState extends State<UploadImage> {
       setStatus(errMessage);
       return;
     }
-    String fileName = tmpFile.path
-        .split('/')
-        .last;
+    String fileName = tmpFile.path.split('/').last;
 
     upload(fileName);
   }
 
-
   upload(String fileName) async {
     // set up POST request
-//    String url = 'http://10.0.2.2:3000/image';
-    String url = 'https://ocr-api.herokuapp.com/image';
+    String url = 'http://10.0.2.2:3000/image';
+//    String url = 'https://ocr-api.herokuapp.com/image';
     // make POST request
     Response response = await post(url, body: {
       "image": base64Image,
@@ -88,13 +85,12 @@ class UploadImageState extends State<UploadImage> {
     });
 
     String text = response.body;
-    setStatus(text);
+    setStatus('done!');
+    txt.text = text;
   }
-
 
   Widget showImage() {
     return FutureBuilder<File>(
-
       future: file,
       builder: (BuildContext context, AsyncSnapshot<File> snapshot) {
         if (snapshot.connectionState == ConnectionState.done &&
@@ -102,14 +98,10 @@ class UploadImageState extends State<UploadImage> {
           tmpFile = snapshot.data;
           base64Image = base64Encode(snapshot.data.readAsBytesSync());
 
-
           return Flexible(
-
             child: Image.file(
               snapshot.data,
-
               fit: BoxFit.fill,
-
             ),
           );
         } else if (null != snapshot.error) {
@@ -137,8 +129,6 @@ class UploadImageState extends State<UploadImage> {
         backgroundColor: Colors.black45,
       ),
       backgroundColor: Colors.blue,
-
-
       body: Container(
         padding: EdgeInsets.all(30.0),
         decoration: BoxDecoration(
@@ -147,20 +137,23 @@ class UploadImageState extends State<UploadImage> {
                 end: Alignment.bottomLeft,
                 colors: [Colors.yellow[300], Colors.pink[100]])),
         child: Column(
-
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-
             OutlineButton(
               onPressed: () {
                 getImage();
               },
-              child: Text('Take Camera', style: TextStyle(fontSize: 16.0),),
+              child: Text(
+                'Take Camera',
+                style: TextStyle(fontSize: 16.0),
+              ),
               shape: new RoundedRectangleBorder(
                   borderRadius: new BorderRadius.circular(30.0)),
               borderSide: BorderSide(color: Colors.blue),
             ),
-            new Padding(padding: const EdgeInsets.all(5.0),),
+            new Padding(
+              padding: const EdgeInsets.all(5.0),
+            ),
             Center(
               child: Text(
                 "or",
@@ -171,7 +164,10 @@ class UploadImageState extends State<UploadImage> {
 
             OutlineButton(
               onPressed: chooseImage,
-              child: Text('Choose Image', style: TextStyle(fontSize: 16.0),),
+              child: Text(
+                'Choose Image',
+                style: TextStyle(fontSize: 16.0),
+              ),
               shape: new RoundedRectangleBorder(
                   borderRadius: new BorderRadius.circular(30.0)),
               borderSide: BorderSide(color: Colors.blue),
@@ -182,18 +178,20 @@ class UploadImageState extends State<UploadImage> {
 
             showImage(),
 
-
             // _imageFile==null ? Container() :Image.file(_imageFile,width:250.0,height: 250.0,color: Colors.grey,),
-
 
             SizedBox(
               height: 20.0,
             ),
             OutlineButton(
               onPressed: startUpload,
-              child: Text('Upload Image', style: TextStyle(fontSize: 16.0),),
+              child: Text(
+                'Upload Image',
+                style: TextStyle(fontSize: 16.0),
+              ),
               shape: new RoundedRectangleBorder(
-                borderRadius: new BorderRadius.circular(30.0),),
+                borderRadius: new BorderRadius.circular(30.0),
+              ),
               borderSide: BorderSide(color: Colors.blue),
             ),
             SizedBox(
@@ -211,6 +209,14 @@ class UploadImageState extends State<UploadImage> {
                 ),
               ),
             ),
+            new Padding(
+              padding: const EdgeInsets.all(5.0),
+            ),
+            TextField(
+              controller: txt,
+              maxLines: 8,
+              decoration: InputDecoration(border: InputBorder.none),
+            ),
             SizedBox(
               height: 20.0,
             ),
@@ -220,5 +226,3 @@ class UploadImageState extends State<UploadImage> {
     );
   }
 }
-       
-       

@@ -24,4 +24,12 @@ export class PaswordResetComponent implements OnInit {
     });
   }
 
+  get formControls() {
+    return this.passwordResetForm.controls;
+  }
+
+  onSubmit() {
+    this.authService.passwordReset(this.passwordResetForm.get('email').value);
+  }
+
 }

@@ -4,6 +4,7 @@ import {Observable} from 'rxjs';
 import {Router} from '@angular/router';
 import {User} from '../models/User';
 import {AngularFirestore} from '@angular/fire/firestore';
+import {FlashMessagesService} from "angular2-flash-messages";
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,8 @@ export class AuthService {
   constructor(
     private afAuth: AngularFireAuth,
     private router: Router,
-    private db: AngularFirestore
+    private db: AngularFirestore,
+    private flashMessage: FlashMessagesService
   ) {
   }
 
@@ -62,5 +64,19 @@ export class AuthService {
         window.location.reload();
       });
 
+  }
+
+  passwordReset(email: string): Promise<any> {
+    return this.afAuth.auth.sendPasswordResetEmail(email)
+      .then( res => {
+        this.flashMessage.show('please check your inbox', {
+          cssClass: 'alert-success', timeout: 4000
+        });
+      })
+      .catch(err => {
+        this.flashMessage.show(err.message, {
+          cssClass: 'alert-danger', timeout: 4000
+        });
+      });
   }
 }

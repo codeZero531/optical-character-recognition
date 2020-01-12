@@ -34,11 +34,11 @@ export class LoginComponent implements OnInit {
   }
 
   registerNavigate() {
-    this.router.navigate(['/register']);
+    this.router.navigate(['register']);
   }
 
   passwordResetNavigate() {
-    this.router.navigate(['/password-reset']);
+    this.router.navigate(['password-reset']);
   }
 
   getErrorMessage() {

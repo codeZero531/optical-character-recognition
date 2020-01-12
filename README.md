@@ -1,4 +1,4 @@
-![GitHub stars](https://img.shields.io/github/stars/codeZero531/optical-character-recognition?style=social) ![GitHub followers](https://img.shields.io/github/followers/codeZero531?style=social) ![GitHub forks](https://img.shields.io/github/forks/codeZero531/optical-character-recognition?style=social)  ![GitHub watchers](https://img.shields.io/github/watchers/codeZero531/optical-character-recognition?style=social) ![GitHub](https://img.shields.io/github/license/codeZero531/optical-character-recognition)
+![GitHub stars](https://img.shields.io/github/stars/codeZero531/optical-character-recognition?style=social) ![GitHub followers](https://img.shields.io/github/followers/codeZero531?style=social) ![GitHub forks](https://img.shields.io/github/forks/codeZero531/optical-character-recognition?style=social)  ![GitHub watchers](https://img.shields.io/github/watchers/codeZero531/optical-character-recognition?style=social) ![GitHub](https://img.shields.io/github/license/codeZero531/optical-character-recognition?style=plastic)
 
 # Optical Character Recognition
 

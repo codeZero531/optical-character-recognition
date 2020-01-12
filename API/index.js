@@ -43,6 +43,9 @@ app.post('/image', (req, res) => {
         const {data: {text}} = await worker.recognize(`./uploads/${req.body.name}`);
         // console.log(text);
         await worker.terminate();
+        // await res.status(200).json({
+        //     word: text
+        // });
         await res.status(200).json({
             word: text
         });

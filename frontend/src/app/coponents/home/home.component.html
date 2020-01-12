@@ -37,6 +37,7 @@
       <div class="card-footer">
 
         <button  (click)="copyText(text)" *ngIf="text" class="btn-block" mat-raised-button color="primary">copy text</button>
+        <button  (click)="generatePdf()" *ngIf="text" class="btn-block" mat-raised-button color="primary">Download pdf file</button>
       </div>
     </div>
 

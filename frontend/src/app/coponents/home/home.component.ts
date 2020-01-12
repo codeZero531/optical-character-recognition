@@ -5,6 +5,10 @@ import {FileService} from '../../services/file.service';
 import {languages} from '../../models/Languages';
 import {FlashMessagesService} from 'angular2-flash-messages';
 
+import pdfMake from 'pdfmake/build/pdfmake';
+import pdfFonts from 'pdfmake/build/vfs_fonts';
+pdfMake.vfs = pdfFonts.pdfMake.vfs;
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -110,6 +114,11 @@ export class HomeComponent implements OnInit {
     const binaryString = readerEvt.target.result;
     this.fileString = btoa(binaryString);
 
+  }
+
+  generatePdf(){
+    const documentDefinition = { content: this.text };
+    pdfMake.createPdf(documentDefinition).download();
   }
 
 

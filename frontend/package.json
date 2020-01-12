@@ -27,6 +27,7 @@
     "express": "^4.17.1",
     "firebase": "^7.6.1",
     "hammerjs": "^2.0.8",
+    "pdfmake": "^0.1.63",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"

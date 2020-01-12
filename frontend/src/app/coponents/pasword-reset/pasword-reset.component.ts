@@ -29,7 +29,17 @@ export class PaswordResetComponent implements OnInit {
   }
 
   onSubmit() {
-    this.authService.passwordReset(this.passwordResetForm.get('email').value);
+    this.authService.passwordReset(this.passwordResetForm.get('email').value)
+      .then( res => {
+        this.flashMessage.show('please check your inbox', {
+          cssClass: 'alert-success', timeout: 4000
+        });
+      })
+      .catch(err => {
+        this.flashMessage.show(err.message, {
+          cssClass: 'alert-danger', timeout: 4000
+        });
+      });
   }
 
 }

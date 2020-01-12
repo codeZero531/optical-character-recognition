@@ -5,6 +5,7 @@ import {Router} from '@angular/router';
 import {User} from '../models/User';
 import {AngularFirestore} from '@angular/fire/firestore';
 import {FlashMessagesService} from "angular2-flash-messages";
+import {useAnimation} from "@angular/animations";
 
 @Injectable({
   providedIn: 'root'
@@ -66,17 +67,16 @@ export class AuthService {
 
   }
 
-  passwordReset(email: string): Promise<any> {
-    return this.afAuth.auth.sendPasswordResetEmail(email)
-      .then( res => {
-        this.flashMessage.show('please check your inbox', {
-          cssClass: 'alert-success', timeout: 4000
-        });
-      })
-      .catch(err => {
-        this.flashMessage.show(err.message, {
-          cssClass: 'alert-danger', timeout: 4000
-        });
-      });
+  passwordReset(email: string) {
+    return new Promise((resolve, reject) => {
+      this.afAuth.auth.sendPasswordResetEmail(email)
+        .then(
+          res => resolve(res),
+          err => reject(err)
+        );
+
+    });
+
+
   }
 }

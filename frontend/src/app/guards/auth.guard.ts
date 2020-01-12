@@ -19,7 +19,7 @@ export class AuthGuard implements CanActivate {
   canActivate(): Observable<boolean> {
     return this.afAuth.authState.pipe(map((auth) => {
       if (!auth) {
-        this.router.navigate(['login']);
+        this.router.navigate(['/login']);
         this.flashMessage.show('Pleas login!', {
           cssClass: 'alert-danger' , timeout: 2000
         });
